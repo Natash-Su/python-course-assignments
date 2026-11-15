@@ -1,5 +1,8 @@
 day03/sample_reports/
 day03/qc_report.html
+day04/sample_reports/
+day04/demo_qc_report.html
+day04/qc_report.html
 __pycache__/
 *.pyc
 .vscode/

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Compare Genotyping Reports</title>
+  </head>
+  <body>
+    <main>
+      <h1>Compare Genotyping Reports</h1>
+      <p>Select at least two Word reports (.docx) to compare.</p>
+      {% if error %}
+        <p role="alert">{{ error }}</p>
+      {% endif %}
+      <form method="post" enctype="multipart/form-data">
+        <label for="reports">Reports</label>
+        <input
+          id="reports"
+          name="reports"
+          type="file"
+          accept=".docx"
+          multiple
+          required
+        >
+        <button type="submit">Compare reports</button>
+      </form>
+    </main>
+  </body>
+</html>
