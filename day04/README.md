@@ -75,3 +75,34 @@ comparison functions and keeping uploads temporary.
 Both versions were checked: the CLI ran successfully, and the web interface
 compared the three fictional reports and found the two differences listed
 above. `day03` remains unchanged.
+
+## Day 5 — Automated tests
+
+The Day 5 tests use Python's built-in `unittest` framework. They create
+fictional Word reports in temporary directories and call the real
+`compare_reports()` function.
+
+The six tests cover:
+
+- Identical reports with no differences.
+- A genotype disagreement between two reports.
+- Identical results when the sample rows are in reversed order.
+- An empty genotype result.
+- A sample missing from one report.
+- A comparison of three reports with two disagreements.
+
+A missing result (`None`) is different from a negative genotype result (`-`):
+`None` means no result was recorded, while `-` is an actual reported result.
+
+Run the tests from the repository root:
+
+```bash
+python -m unittest discover -s day04 -p "test_*.py" -v
+```
+
+All six tests passed.
+
+The Day 5 prompts asked to inspect the existing comparison logic, then add
+automated tests for matching reports, disagreements, row-order independence,
+empty and missing results, and comparisons across three analysts. The tests
+use fictional temporary reports and do not modify the application code.
